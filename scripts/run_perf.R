@@ -205,12 +205,12 @@ run_perf <- function(answers_dir = "Answers", dest_url = NULL, panel_url = NULL,
         group_by(Producto) %>%
         summarise_all(mean, na.rm = TRUE) %>%
         column_to_rownames(var = "Producto")
-      mfa<-MFA(df_wide, group=c(11,11),
+      mfa<-MFA(df_wide, group=c(22,22),
                name.group=c("Rep1","Rep2"),graph = FALSE)
      mfa$group$RV
 
       output$answer_mfa <- renderTable(mfa$group$RV, align = c, rownames = TRUE)
-      plot( MFA(df_wide, group=c(11,11),
+      plot( MFA(df_wide, group=c(22,22),
                 name.group=c("Rep1","Rep2")), choix = "ind", partial="all")
 
 
